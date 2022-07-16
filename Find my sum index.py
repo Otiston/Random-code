@@ -10,8 +10,8 @@ def finder(n):
     for i in range(len(n)):
         num = n[i]
         delta = target-num
-        if delta > 0 and num*2 != target and delta in n[i:]:
-            res.append([n.index(num,i),n.index(delta,i)])
+        if delta > 0 and delta in n[i+1:]:
+            res.append([n.index(n[i],i),n.index(delta,i+1)])
             res[0] += 1
     if res[0] > 0:
         return res
